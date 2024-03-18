@@ -1,0 +1,16 @@
+import RPi.GPIO as GPIO
+import time
+def decimal2binary(chislo):
+    return [int(element) for element in bin(chislo)[2:].zfill(8)]
+
+GPIO.setmode(GPIO.BCM)
+dac = [8, 11, 7, 1, 0, 5, 12, 6]
+
+GPIO.setup(dac, GPIO.OUT)
+
+time = int(input())
+min = int(input())
+max = int(input())
+
+while True:
+    
